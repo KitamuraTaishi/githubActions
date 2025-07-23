@@ -1,0 +1,31 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: bash ls command
+        run: ls -la
+      
+      - name: clone repo
+        uses: actions/checkout@v3
+      
+      - name: bash ls commmand again
+        run: ls -la
+      #   uses: actions/checkout@v2
+
+      # - name: Set up Node.js
+      #   uses: actions/setup-node@v2
+      #   with:
+      #     node-version: '14'
+
+      # - name: Install dependencies
+      #   run: npm install
+
+      # - name: Run tests
+      #   run: npm test
+
+      # - name: Build project
+      #   run: npm run build
