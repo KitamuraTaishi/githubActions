@@ -1,0 +1,8 @@
+name: Dispathc
+on: [workflow_dispatch]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: bash ls command
+        run: ls -la && echo "This is a workflow dispatch event"
