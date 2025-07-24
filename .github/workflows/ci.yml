@@ -7,6 +7,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: hash check
-        run: echo "$HASH"
+        run: ls && echo "$HASH"
         env:
           HASH: ${{ hashFiles('README.md') }}
