@@ -16,3 +16,12 @@ jobs:
 
       - name: go version check again
         run: go version
+
+      - name: echo github variables
+        run: |
+          echo "GITHUB_WORKSPACE: $GITHUB_WORKSPACE"
+          echo "GITHUB_REPOSITORY: $GITHUB_REPOSITORY"
+          echo "GITHUB_REF: $GITHUB_REF"
+          echo "GITHUB_SHA: $GITHUB_SHA"
+      - name: echo github variables again
+        run: echo "${{ toJSON(github) }}"
