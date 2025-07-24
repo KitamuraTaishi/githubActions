@@ -5,6 +5,8 @@ on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      TEST_ENV: 'test_value'
     steps:
       - name: runner checkout
-        run: echo "${{ toJSON(runner) }}"
+        run: echo "${{ env.TEST_ENV }}"
