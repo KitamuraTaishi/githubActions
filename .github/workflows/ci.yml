@@ -6,7 +6,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      TEST_ENV: 'test_value'
+      USERNAME: ${{ vars.USERNAME}}'
     steps:
-      - name: runner checkout
-        run: echo "${TEST_ENV}"
+      - name: USERNAME check
+        run: echo "${USERNAME}"
