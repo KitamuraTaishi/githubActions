@@ -5,8 +5,8 @@ on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      PASSWORD: ${{ secrets.PASSWORD }}'
     steps:
-      - name: USERNAME check
-        run: echo "${PASSWORD:0:1} ${PASSWORD#?}"
+      - name: aaaaaa
+        run : printenv | grep "TEST_"
+        env: 
+          TEST_CONTAINS: ${{ contains("TEST", "T")}}
