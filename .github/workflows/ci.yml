@@ -9,4 +9,4 @@ jobs:
       TEST_ENV: 'test_value'
     steps:
       - name: runner checkout
-        run: echo "${{ env.TEST_ENV }}"
+        run: echo "${{ TEST_ENV }}"
