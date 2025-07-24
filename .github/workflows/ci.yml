@@ -9,4 +9,4 @@ jobs:
       - name: aaaaaa
         run : printenv | grep "TEST_"
         env: 
-          TEST_CONTAINS: ${{ contains("TEST", "T")}}
+          TEST_CONTAINS: ${{ contains("TEST", "T") }}
