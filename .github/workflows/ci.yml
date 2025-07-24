@@ -7,6 +7,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: aaaaaa
-        run : printenv | grep "TEST_"
+        run : printenv | grep 'TEST_'
         env: 
-          TEST_CONTAINS: ${{ contains("TEST", "T") }}
+          TEST_CONTAINS: ${{ contains('TEST_', 'T) }}
