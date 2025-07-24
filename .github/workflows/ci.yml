@@ -6,7 +6,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      USERNAME: ${{ vars.USERNAME}}'
+      PASSWORD: ${{ secrets.PASSWORD }}'
     steps:
       - name: USERNAME check
-        run: echo "${USERNAME}"
+        run: echo "${PASSWORD}"
