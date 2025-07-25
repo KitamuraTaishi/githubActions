@@ -6,10 +6,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-        
-      - name: hash check
-        run: ls && echo "$HASH"
-        env:
-          HASH: ${{ hashFiles('README.md') }}
+      - name: if check true
+        run: echo "if true"
+        if : ${{ true }}
+
+      - name: if check false
+        run: echo "if false"
+        if : ${{ false }}
