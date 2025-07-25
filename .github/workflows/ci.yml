@@ -8,7 +8,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: test
-        run: echo "TEST=test" >> $GITHUB_ENV
+        id: test_step
+        run: echo "TEST=test" >> $GITHUB_OUTPUT
 
       - name:  echo test
-        run: echo $TEST
+        run: echo ${{ steps.test_step.outputs.TEST }}
