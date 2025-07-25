@@ -6,8 +6,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: error check
-        run: exit 1
+      - name: success check
+        run: exit 0
 
       - name:  error catch
         run: echo "error catch"
