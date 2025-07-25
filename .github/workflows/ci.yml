@@ -9,4 +9,4 @@ jobs:
         uses: actions/checkout@v4
 
       - name: check github head ref
-        run: echo "GTIHUB_HEAD_REF- ${GTIHUB_HEAD_REF}"
+        run: echo "GTIHUB_HEAD_REF- ${GITHUB_HEAD_REF}"
