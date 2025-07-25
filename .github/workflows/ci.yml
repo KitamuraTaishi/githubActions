@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: test
-        run: export TEST="test"
+        run: echo "TEST=test" >> $GITHUB_ENV
 
       - name:  echo test
         run: echo $TEST
