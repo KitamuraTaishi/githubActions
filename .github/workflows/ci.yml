@@ -7,9 +7,8 @@ jobs:
     name: Build Job!!!!!!!!!!!
     runs-on: ubuntu-latest
     steps:
-      - name: success check
-        run: exit 0
+      - name: test
+        run: export TEST="test"
 
-      - name:  error catch
-        run: echo "error catch"
-        if : ${{ failure() }}
+      - name:  echo test
+        run: echot $TEST
