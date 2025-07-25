@@ -10,6 +10,6 @@ jobs:
         run: echo "if true"
         if : ${{ true }}
 
-      - name: if check success
-        run: echo "if success"
-        if : ${{ success() }}
+      - name: if check failure
+        run: echo "if failure"
+        if : ${{ failure() }}
