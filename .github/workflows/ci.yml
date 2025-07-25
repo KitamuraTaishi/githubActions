@@ -1,15 +1,12 @@
-name: CI
+name: some Tests
 run-name: Run by @${{ github.actor }}
-on: [push]
-
+on: push
 jobs:
-  build:
-    name: Build Job!!!!!!!!!!!
+  comment:
     runs-on: ubuntu-latest
     steps:
-      - name: test
-        id: test_step
-        run: echo "TEST=test" >> $GITHUB_OUTPUT
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-      - name:  echo test
-        run: echo ${{ steps.test_step.outputs.TEST }}
+      - name: check github head ref
+        run: echo "GTIHUB_HEAD_REF- ${GTIHUB_HEAD_REF}"
