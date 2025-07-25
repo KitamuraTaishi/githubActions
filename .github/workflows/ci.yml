@@ -6,10 +6,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: if check true
-        run: echo "if true"
-        if : ${{ true }}
+      - name: error check
+        run: exit 1
 
-      - name: if check failure
-        run: echo "if failure"
+      - name:  error catch
+        run: echo "error catch"
         if : ${{ failure() }}
