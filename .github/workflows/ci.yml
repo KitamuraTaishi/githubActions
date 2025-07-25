@@ -11,4 +11,4 @@ jobs:
         run: export TEST="test"
 
       - name:  echo test
-        run: echot $TEST
+        run: echo $TEST
