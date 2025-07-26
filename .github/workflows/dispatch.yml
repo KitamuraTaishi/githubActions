@@ -11,6 +11,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: github actions check
-        run: echo "check done!!!!!!"
+        run: echo "check done!!!!!! ${WORKFLOW}"
+        env:
+          WORKFLOW: ${{ github.workflow }}
 
     
