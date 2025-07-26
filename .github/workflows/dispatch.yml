@@ -12,6 +12,7 @@ jobs:
     steps:
       - run: sleep 10 && echo "Test 1 completed"
   test2:
+    needs: [test1]
     runs-on: ubuntu-latest
     steps:
       - run: sleep 5 && echo "Test 2 completed"
