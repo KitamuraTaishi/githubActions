@@ -1,14 +1,16 @@
-name: some Tests
+name: Test
 run-name: Run by @${{ github.actor }}
-on: pull_request
+on: 
+  pull_request:
+    paths: ['go/**/*.go']
 jobs:
-  comment:
+  test:
+    name: Test Go Code
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: check github head ref
-        run: echo "GTIHUB_HEAD_REF- ${GITHUB_HEAD_REF}" --body "hello ${GITHUB_ACTOR}"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version: '1.22'
+      - run: go test go/excellent*.go
+ 
