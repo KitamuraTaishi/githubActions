@@ -1,5 +1,5 @@
 name: test
-run-name: Run by @${{ github.actor }}
+run-name: Run by a@${{ github.actor }}
 on: push
 defaults:
   run:
