@@ -1,16 +1,16 @@
-name: Dispathc
-on: 
-  workflow_dispatch:
-    inputs:
-      greeting:
-        description: 'Greeting message'
-        required: true
-        default: 'Hello, World!'
-
-
+name: test
+run-name: Run by @${{ github.actor }}
+on: push
+defaults:
+  run:
+    shell: bash
 jobs:
-  test:
+  check:
+    name: check github actions
+    timeout-minutes: 1
     runs-on: ubuntu-latest
     steps:
-      - name: bash ls command
-        run: ls -la && echo "This is a workflow dispatch event ${{inputs.greeting}}"
+      - name: github actions check
+        run: echo "check done!!!!!!"
+
+    
