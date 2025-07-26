@@ -1,29 +1,21 @@
-name: test
-run-name: Run by ab@${{ github.actor }}
+name: concurrent-test
+run-name: Run by @${{ github.actor }}
 on: push
 defaults:
   run:
     shell: bash
-concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
 jobs:
-  check:
+  
+  test1:
     name: check github actions
-    timeout-minutes: 2
     runs-on: ubuntu-latest
     steps:
-      - name: github actions check
-        run: echo "check done!!!!!! ${WORKFLOW}  REF ${REF}"
-        env:
-          WORKFLOW: ${{ github.workflow }}
-          REF: ${{ github.ref }}
-      - name: debug
-        run: echo "::debug::this is a debug log"
-      - name: info
-        run: echo "::info::this is an info log"
-      - name: warning
-        run: echo "::warning::this is a warning log"
-      - name: error
-        run: echo "::error::this is an error log"
-    
+      - run: sleep 10 && echo "Test 1 completed"
+  test2:
+    runs-on: ubuntu-latest
+    steps:
+      - run: sleep 5 && echo "Test 2 completed"
+  test3:
+    runs-on: ubuntu-latest
+    steps:
+      - run: sleep 3 && echo "Test 3 completed"
