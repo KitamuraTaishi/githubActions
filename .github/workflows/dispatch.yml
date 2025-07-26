@@ -20,4 +20,10 @@ jobs:
           REF: ${{ github.ref }}
       - name: debug
         run: echo "::debug::this is a debug log"
+      - name: info
+        run: echo "::info::this is an info log"
+      - name: warning
+        run: echo "::warning::this is a warning log"
+      - name: error
+        run: echo "::error::this is an error log"
     
