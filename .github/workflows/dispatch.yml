@@ -14,8 +14,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: github actions check
-        run: sleep 120 && echo "check done!!!!!! ${WORKFLOW}"
+        run: echo "check done!!!!!! ${WORKFLOW}  REF ${REF}"
         env:
           WORKFLOW: ${{ github.workflow }}
+          REF: ${{ github.ref }}
 
     
