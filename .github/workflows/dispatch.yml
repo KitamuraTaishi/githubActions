@@ -5,18 +5,18 @@ defaults:
   run:
     shell: bash
 jobs:
-  
   test1:
     name: check github actions
     runs-on: ubuntu-latest
     steps:
-      - run: sleep 10 && echo "Test 1 completed"
+      - id: data
+        run: echo "Test 1 completed" >> ${GITHUB_OUTPUT}
+    outputs:
+      result: ${{ steps.data.outputs.result }}
   test2:
     needs: [test1]
     runs-on: ubuntu-latest
     steps:
-      - run: sleep 5 && echo "Test 2 completed"
-  test3:
-    runs-on: ubuntu-latest
-    steps:
-      - run: sleep 3 && echo "Test 3 completed"
+      - run: sleep 5 && echo "Test 2 completed ${RESULT}"
+        env: 
+          RESULT: ${{ needs.test1.outputs.result }}
