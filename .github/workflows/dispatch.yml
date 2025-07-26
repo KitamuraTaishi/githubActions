@@ -4,6 +4,9 @@ on: push
 defaults:
   run:
     shell: bash
+concurrency:
+  group: ${{ github.workflow }}
+  # cancel-in-progress: true
 jobs:
   check:
     name: check github actions
@@ -11,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: github actions check
-        run: echo "check done!!!!!! ${WORKFLOW}"
+        run: sleep 120 && echo "check done!!!!!! ${WORKFLOW}"
         env:
           WORKFLOW: ${{ github.workflow }}
 
