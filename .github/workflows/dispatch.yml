@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - id: data
-        run: echo "Test 1 completed" >> ${GITHUB_OUTPUT}
+        run: echo "result=test1_steps" >> ${GITHUB_OUTPUT}
     outputs:
       result: ${{ steps.data.outputs.result }}
   test2:
