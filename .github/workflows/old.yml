@@ -5,12 +5,10 @@ defaults:
   run:
     shell: bash
 jobs:
-  dependent-test:
-    name: dependent test
+  check:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/setup-go@v5
-        name: Setup Go
-
-      - run: echo "This is a dependent test step"
+      - run: echo "REPOSITORY_OWNER ${REPOSITORY_OWNER}"
+        env:
+          REPOSITORY_OWNER: ${{ github.repository_owner }}
 
