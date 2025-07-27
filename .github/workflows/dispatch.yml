@@ -1,16 +1,22 @@
-name: Dispathc
-on: 
-  workflow_dispatch:
-    inputs:
-      greeting:
-        description: 'Greeting message'
-        required: true
-        default: 'Hello, World!'
-
-
+name: concurrent-test
+run-name: Run by @${{ github.actor }}
+on: push
+defaults:
+  run:
+    shell: bash
 jobs:
-  test:
+  test1:
+    name: check github actions
     runs-on: ubuntu-latest
     steps:
-      - name: bash ls command
-        run: ls -la && echo "This is a workflow dispatch event ${{inputs.greeting}}"
+      - id: data
+        run: echo "result=test1_steps" >> ${GITHUB_OUTPUT}
+    outputs:
+      result: ${{ steps.data.outputs.result }}
+  test2:
+    needs: [test1]
+    runs-on: ubuntu-latest
+    steps:
+      - run: sleep 5 && echo "Test 2 completed ${RESULT}"
+        env: 
+          RESULT: ${{ needs.test1.outputs.result }}
