@@ -10,3 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/setup-go@v5
+        name: Setup Go
+
+      - run: echo "This is a dependent test step"
+
