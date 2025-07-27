@@ -1,0 +1,12 @@
+name: Old
+run-name: Run by @${{ github.actor }}
+on: push
+defaults:
+  run:
+    shell: bash
+jobs:
+  dependent-test:
+    name: dependent test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-go@v4
